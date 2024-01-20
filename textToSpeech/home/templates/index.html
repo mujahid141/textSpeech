@@ -1,0 +1,18 @@
+<!-- tts_app/templates/index.html -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text-to-Speech</title>
+  </head>
+  <body>
+    <form method="post" action="{% url 'text_to_speech' %}">
+      {% csrf_token %}
+      <label for="text">Enter Text:</label>
+      <textarea name="text" rows="4" cols="50"></textarea>
+      <br />
+      <input type="submit" value="Convert to Speech" />
+    </form>
+  </body>
+</html>

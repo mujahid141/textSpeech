@@ -1,0 +1,17 @@
+<!-- templates/play_audio.html -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Audio</title>
+  </head>
+  <body>
+    <h1>Play Audio</h1>
+    <audio controls>
+      <source src="{% static 'audio.mp3' %}" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>
