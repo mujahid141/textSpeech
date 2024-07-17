@@ -1,10 +1,10 @@
 # tts_project/urls.py
 from django.urls import path
-from home.views import text_to_speech, play_audio
+from home import views
 
 
 urlpatterns = [
-    path('text-to-speech/', text_to_speech, name='text_to_speech'),
-    path('play_audio/', play_audio, name = 'play_audio' ),
-    # Add other paths as needed
+    # path('', views.index, name='index'),  # Home page for user input
+    path('', views.text_to_speech, name='text_to_speech'),
+    path('play-audio/', views.play_audio, name='play_audio'),
 ]

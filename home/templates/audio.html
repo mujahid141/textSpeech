@@ -17,6 +17,7 @@
         }
         .container {
             text-align: center;
+            width: 500px;
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -31,15 +32,37 @@
             max-width: 300px;
             margin: 20px 0;
         }
+        .button-container {
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Play Audio</h1>
+        {% if audio_file_path %}
         <audio controls>
-            <source src="{% static 'audio.mp3' %}" type="audio/mp3">
+            <source src="{% static audio_file_path %}" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
+        <div class="button-container">
+            <a href="{% static audio_file_path %}" download class="button">Download Audio</a>
+        </div>
+        {% else %}
+        <p>No audio file available.</p>
+        {% endif %}
     </div>
 </body>
 </html>
